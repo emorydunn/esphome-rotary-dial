@@ -2,6 +2,8 @@
 
 A custom ESPHome component that sends the dialed number to Home Assistant.
 
+![Entity in Home Assistant](https://raw.githubusercontent.com/emorydunn/esphome-rotary-dial/main/images/hass_sensor.png)
+
 # Installation
 
 1. Copy `rotary_phone_sensor.h` to your `custom_components` folder
