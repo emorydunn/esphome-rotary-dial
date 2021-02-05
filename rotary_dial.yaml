@@ -1,0 +1,29 @@
+esphome:
+  name: rotary_dial
+  platform: ESP8266
+  board: d1_mini
+  includes:
+    - custom_components/rotary_phone_sensor.h
+
+wifi:
+  # Your WiFi config here #
+
+# Enable logging
+logger:
+  level: DEBUG
+  esp8266_store_log_strings_in_flash: False
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+sensor:
+  - platform: custom
+    lambda: |-
+      auto rotary_phone_sensor = new RotaryPhoneSensor();
+      App.register_component(rotary_phone_sensor);
+      return {rotary_phone_sensor};
+
+    sensors:
+      name: "Rotary Dial"
